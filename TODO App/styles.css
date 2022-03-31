@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.center {
+  align-self: center;
+}
+
+.flow-right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flow-right span{
+  font-size: 20px;
+  width: 200px;
+  height: 40px;
+}
+
+
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: 100vh;
+}
+
+.title, .controls, .button {
+  flex: none;
+}
+
+.button {
+  padding: 10px 20px;
+}
+
+.todo-list {
+  flex: 1 1 0;
+  margin-top: 20px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.todo-delete {
+  margin: 10px;
+}
+
+.todo-checkbox {
+  margin: 10px;
+}
+
+.todo-container {
+  padding: 20px;
+}
+
+.todo-container:first-of-type {
+  border-top: 1px solid #333;
+}
+
+#item-count, #unchecked-count{
+  font-size: 20px;
+}
+.insert-item{
+  margin: 0 auto;
+}
+
+.todo-list li{
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#item-checkbox{
+  border-radius: 10%;
+}
+
+.item-delete-button{
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 35px;
+  border: none;
+  width: 100px;
+  flex: 0.5;
+}
+
+.item-delete-button:hover{
+  background-color: rgba(255, 64, 58, 0.705);
+  transition: .4s;
+  cursor: pointer;
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+}
+
