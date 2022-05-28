@@ -57,19 +57,13 @@ export default function CustomChart() {
         <Button
           style={styles.dateButton}
           title="Start date"
-          onPress={() => {
-            showDatePicker1;
-          }}
+          onPress={showDatePicker1}
         />
         <DateTimePickerModal
           isVisible={isDatePickerVisible1}
           mode="date"
-          onConfirm={() => {
-            handleStartDate;
-          }}
-          onCancel={() => {
-            hideDatePicker1;
-          }}
+          onConfirm={handleStartDate}
+          onCancel={hideDatePicker1}
           maximumDate={new Date()}
         />
         <TextInput
@@ -86,9 +80,7 @@ export default function CustomChart() {
         <Button
           style={styles.dateButton}
           title="End Date"
-          onPress={() => {
-            showDatePicker2;
-          }}
+          onPress={showDatePicker2}
         />
         <DateTimePickerModal
           isVisible={isDatePickerVisible2}
