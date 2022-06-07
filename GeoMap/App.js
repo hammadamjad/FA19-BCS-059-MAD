@@ -53,7 +53,7 @@ export default function App() {
         </Marker>
         <Circle
           center={{ latitude: latitude, longitude: longitude }}
-          radius={500}
+          radius={100}
         ></Circle>
       </MapView>
     </View>
