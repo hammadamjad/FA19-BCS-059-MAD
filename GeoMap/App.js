@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MapView, {
   Callout,
   Circle,
   Marker,
-  Polyline,
   PROVIDER_GOOGLE,
 } from "react-native-maps";
 import { StyleSheet, Text, View, Dimensions } from "react-native";
+import * as Location from "expo-location";
 
 export default function App() {
   const [latitude, setLat] = useState(33.6844);
   const [longitude, setLong] = useState(73.0479);
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        // setErrorMsg("Permission to access location was denied");
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      setLat(location.latitude);
+      setLong(location.longitude);
+    })();
+  }, []);
 
   return (
     <View style={styles.container}>
