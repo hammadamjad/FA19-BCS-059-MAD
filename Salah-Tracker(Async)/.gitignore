@@ -1,5 +1,5 @@
 node_modules/
-package.json
+App.js
 .expo/
 dist/
 npm-debug.*
