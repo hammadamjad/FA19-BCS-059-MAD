@@ -7,8 +7,20 @@ import Jamats from "./Jamats";
 export default function HomeScreen() {
   const [date, setDate] = useState("");
   return (
-    <ScrollView>
-      <React_Calendar setDate={setDate} />
+    <ScrollView
+      style={{
+        backgroundColor: "white",
+      }}
+    >
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <React_Calendar setDate={setDate} />
+      </View>
       <Jamats date={date} />
     </ScrollView>
   );

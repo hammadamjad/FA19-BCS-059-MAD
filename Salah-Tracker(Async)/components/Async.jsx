@@ -48,11 +48,19 @@ export const getWeekly = async (setData) => {
       }
     }
 
-    // storing updated data object to array
-    setData(data);
-    // console.log(data);
+    if (
+      data[0].y == 0 &&
+      data[1].y == 0 &&
+      data[2].y == 0 &&
+      data[3].y == 0 &&
+      data[4].y == 0
+    ) {
+      setData(null);
+    } else {
+      setData(data);
+    }
   } catch (e) {
-    // error reading value
+    console.log("error weekly charts");
   }
 };
 
@@ -164,3 +172,9 @@ export const getCustom = async (startDate, endDate, setData) => {
     // error reading value
   }
 };
+
+export async function getKeys(setMark) {
+  // Clear cache
+  const keys = await AsyncStorage.getAllKeys();
+  setMark(keys);
+}

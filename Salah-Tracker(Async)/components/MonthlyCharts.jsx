@@ -1,5 +1,5 @@
 import { View, Button } from "react-native";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   VictoryBar,
   VictoryChart,
@@ -13,7 +13,10 @@ export default function MonthlyCharts() {
   const [data, setData] = useState(null);
 
   // getting the data
-  getMonthly(setData);
+
+  useEffect(() => {
+    getMonthly(setData);
+  }, []);
 
   if (data != null) {
     return (
@@ -25,13 +28,9 @@ export default function MonthlyCharts() {
               data: { width: 50 },
               labels: { padding: -10, fontSize: 10 },
             }}
-            labelComponent={
-              <VictoryPortal>
-                <VictoryLabel />
-              </VictoryPortal>
-            }
           >
             <VictoryBar
+              renderInPortal={false}
               data={[
                 {
                   x: data[3][0],
@@ -56,6 +55,7 @@ export default function MonthlyCharts() {
               ]}
             />
             <VictoryBar
+              renderInPortal={false}
               data={[
                 {
                   x: data[3][0],
@@ -80,6 +80,7 @@ export default function MonthlyCharts() {
               ]}
             />
             <VictoryBar
+              renderInPortal={false}
               data={[
                 {
                   x: data[3][0],
@@ -104,6 +105,7 @@ export default function MonthlyCharts() {
               ]}
             />
             <VictoryBar
+              renderInPortal={false}
               data={[
                 {
                   x: data[3][0],
@@ -128,6 +130,7 @@ export default function MonthlyCharts() {
               ]}
             />
             <VictoryBar
+              renderInPortal={false}
               data={[
                 {
                   x: data[3][0],
@@ -161,13 +164,9 @@ export default function MonthlyCharts() {
       <VictoryChart>
         <VictoryStack
           colorScale={["#1BD5D4", "#AF4BCF", "#E97369", "#1DE4BD", "#E7E34E"]}
-          labelComponent={
-            <VictoryPortal>
-              <VictoryLabel />
-            </VictoryPortal>
-          }
         >
           <VictoryBar
+            renderInPortal={false}
             data={[
               { x: 1, y: 3, label: "C" },
               { x: 2, y: 4, label: "C" },
@@ -175,6 +174,7 @@ export default function MonthlyCharts() {
             ]}
           />
           <VictoryBar
+            renderInPortal={false}
             data={[
               { x: 1, y: 3, label: "B" },
               { x: 2, y: 4, label: "B" },
@@ -182,6 +182,7 @@ export default function MonthlyCharts() {
             ]}
           />
           <VictoryBar
+            renderInPortal={false}
             data={[
               { x: 1, y: 3, label: "A" },
               { x: 2, y: 4, label: "A" },

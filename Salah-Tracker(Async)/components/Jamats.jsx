@@ -20,7 +20,7 @@ export default function Jamats({ date }) {
   const toggleSwitch5 = () => setIsEnabled5((previousState) => !previousState);
 
   const submitData = function () {
-    data = [
+    const data = [
       { x: "Fajr", y: 0 },
       { x: "Zuhr", y: 0 },
       { x: "Asr", y: 0 },
@@ -36,6 +36,11 @@ export default function Jamats({ date }) {
 
     // storing the data
     storeData(date, data);
+    setIsEnabled1(false);
+    setIsEnabled2(false);
+    setIsEnabled3(false);
+    setIsEnabled4(false);
+    setIsEnabled5(false);
   };
 
   return (
@@ -113,6 +118,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1.5,
     borderColor: "blue",
+    margin: 20,
   },
   submitText: {
     color: "white",
